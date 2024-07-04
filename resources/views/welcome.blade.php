@@ -34,8 +34,10 @@
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center text-white">
-                    <h1 class="display-4" style="font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Welcome to Our Travel Agency</h1>
-                    <p class="lead" style="font-weight: 500; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">Explore the world with us</p>
+                    <h1 class="display-4" style="font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Welcome to
+                        Our Travel Agency</h1>
+                    <p class="lead" style="font-weight: 500; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">Explore the world
+                        with us</p>
                     <button class="btn btn-primary">Get Started</button>
                 </div>
             </div>
@@ -65,36 +67,21 @@
                 <div class="col-md-8 text-center">
                     <h2 class="mb-3">Popular Destinations</h2>
                     <div class="row">
+                        @foreach ($destinations as $item)
                         <div class="col-md-4">
                             <div class="card">
-                                <img src="https://via.placeholder.com/300x200" alt="Destination 1">
+                                <img src="{{ asset('images/destinations/'.$item->image) }}" alt="{{ $item->destination_name }}">
                                 <div class="card-body">
-                                    <h5 class="card-title">Destination 1</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    <h5 class="card-title">{{ $item->destination_name }}</h5>
+                                    <p class="card-text">{{ $item->description }}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="https://via.placeholder.com/300x200" alt="Destination 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Destination 2</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card">
-                                <img src="https://via.placeholder.com/300x200" alt="Destination 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Destination 3</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
